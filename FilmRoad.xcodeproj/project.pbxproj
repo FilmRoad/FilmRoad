@@ -7,63 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		57F49E2E2D9E2509006B32C3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 57F49E2D2D9E2509006B32C3 /* Kingfisher */; };
-		57F49E312D9E2514006B32C3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 57F49E302D9E2514006B32C3 /* Alamofire */; };
-		CE5BC0F92D9E2EEB0007076E /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CE5BC0F82D9E2EEB0007076E /* Config.xcconfig */; };
+		CE5BC1EE2D9E59AC0007076E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CE5BC1ED2D9E59AC0007076E /* Kingfisher */; };
+		CE5BC1F12D9E59BF0007076E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE5BC1F02D9E59BF0007076E /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		57F49E042D9E24A3006B32C3 /* FlimRoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlimRoad.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE5BC0F82D9E2EEB0007076E /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		CE5BC1B52D9E592A0007076E /* FilmRoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilmRoad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		57F49E162D9E24A4006B32C3 /* Exceptions for "FlimRoad" folder in "FlimRoad" target */ = {
+		CE5BC1C72D9E592B0007076E /* Exceptions for "FilmRoad" folder in "FilmRoad" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 57F49E032D9E24A3006B32C3 /* FlimRoad */;
+			target = CE5BC1B42D9E592A0007076E /* FilmRoad */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		57F49E062D9E24A3006B32C3 /* FlimRoad */ = {
+		CE5BC1B72D9E592A0007076E /* FilmRoad */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				57F49E162D9E24A4006B32C3 /* Exceptions for "FlimRoad" folder in "FlimRoad" target */,
+				CE5BC1C72D9E592B0007076E /* Exceptions for "FilmRoad" folder in "FilmRoad" target */,
 			);
-			path = FlimRoad;
+			path = FilmRoad;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		57F49E012D9E24A3006B32C3 /* Frameworks */ = {
+		CE5BC1B22D9E592A0007076E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57F49E2E2D9E2509006B32C3 /* Kingfisher in Frameworks */,
-				57F49E312D9E2514006B32C3 /* Alamofire in Frameworks */,
+				CE5BC1EE2D9E59AC0007076E /* Kingfisher in Frameworks */,
+				CE5BC1F12D9E59BF0007076E /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		57F49DFB2D9E24A3006B32C3 = {
+		CE5BC1AC2D9E592A0007076E = {
 			isa = PBXGroup;
 			children = (
-				CE5BC0F82D9E2EEB0007076E /* Config.xcconfig */,
-				57F49E062D9E24A3006B32C3 /* FlimRoad */,
-				57F49E052D9E24A3006B32C3 /* Products */,
+				CE5BC1B72D9E592A0007076E /* FilmRoad */,
+				CE5BC1B62D9E592A0007076E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		57F49E052D9E24A3006B32C3 /* Products */ = {
+		CE5BC1B62D9E592A0007076E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				57F49E042D9E24A3006B32C3 /* FlimRoad.app */,
+				CE5BC1B52D9E592A0007076E /* FilmRoad.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -71,81 +68,80 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		57F49E032D9E24A3006B32C3 /* FlimRoad */ = {
+		CE5BC1B42D9E592A0007076E /* FilmRoad */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 57F49E172D9E24A4006B32C3 /* Build configuration list for PBXNativeTarget "FlimRoad" */;
+			buildConfigurationList = CE5BC1C82D9E592B0007076E /* Build configuration list for PBXNativeTarget "FilmRoad" */;
 			buildPhases = (
-				57F49E002D9E24A3006B32C3 /* Sources */,
-				57F49E012D9E24A3006B32C3 /* Frameworks */,
-				57F49E022D9E24A3006B32C3 /* Resources */,
+				CE5BC1B12D9E592A0007076E /* Sources */,
+				CE5BC1B22D9E592A0007076E /* Frameworks */,
+				CE5BC1B32D9E592A0007076E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				57F49E062D9E24A3006B32C3 /* FlimRoad */,
+				CE5BC1B72D9E592A0007076E /* FilmRoad */,
 			);
-			name = FlimRoad;
+			name = FilmRoad;
 			packageProductDependencies = (
-				57F49E2D2D9E2509006B32C3 /* Kingfisher */,
-				57F49E302D9E2514006B32C3 /* Alamofire */,
+				CE5BC1ED2D9E59AC0007076E /* Kingfisher */,
+				CE5BC1F02D9E59BF0007076E /* Alamofire */,
 			);
-			productName = FlimRoad;
-			productReference = 57F49E042D9E24A3006B32C3 /* FlimRoad.app */;
+			productName = FilmRoad;
+			productReference = CE5BC1B52D9E592A0007076E /* FilmRoad.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		57F49DFC2D9E24A3006B32C3 /* Project object */ = {
+		CE5BC1AD2D9E592A0007076E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					57F49E032D9E24A3006B32C3 = {
+					CE5BC1B42D9E592A0007076E = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
-			buildConfigurationList = 57F49DFF2D9E24A3006B32C3 /* Build configuration list for PBXProject "FlimRoad" */;
+			buildConfigurationList = CE5BC1B02D9E592A0007076E /* Build configuration list for PBXProject "FilmRoad" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 57F49DFB2D9E24A3006B32C3;
+			mainGroup = CE5BC1AC2D9E592A0007076E;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				57F49E2C2D9E2509006B32C3 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				57F49E2F2D9E2514006B32C3 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				CE5BC1EC2D9E59AC0007076E /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				CE5BC1EF2D9E59BF0007076E /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 57F49E052D9E24A3006B32C3 /* Products */;
+			productRefGroup = CE5BC1B62D9E592A0007076E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				57F49E032D9E24A3006B32C3 /* FlimRoad */,
+				CE5BC1B42D9E592A0007076E /* FilmRoad */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		57F49E022D9E24A3006B32C3 /* Resources */ = {
+		CE5BC1B32D9E592A0007076E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE5BC0F92D9E2EEB0007076E /* Config.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		57F49E002D9E24A3006B32C3 /* Sources */ = {
+		CE5BC1B12D9E592A0007076E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -155,7 +151,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		57F49E182D9E24A4006B32C3 /* Debug */ = {
+		CE5BC1C92D9E592B0007076E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -163,7 +159,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FlimRoad/Info.plist;
+				INFOPLIST_FILE = FilmRoad/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -174,7 +170,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bootcamp.project.FlimRoad;
+				PRODUCT_BUNDLE_IDENTIFIER = org.kibwa.lyr672.FilmRoad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -182,7 +178,7 @@
 			};
 			name = Debug;
 		};
-		57F49E192D9E24A4006B32C3 /* Release */ = {
+		CE5BC1CA2D9E592B0007076E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -190,7 +186,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FlimRoad/Info.plist;
+				INFOPLIST_FILE = FilmRoad/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -201,7 +197,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bootcamp.project.FlimRoad;
+				PRODUCT_BUNDLE_IDENTIFIER = org.kibwa.lyr672.FilmRoad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -209,9 +205,8 @@
 			};
 			name = Release;
 		};
-		57F49E1A2D9E24A4006B32C3 /* Debug */ = {
+		CE5BC1CB2D9E592B0007076E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE5BC0F82D9E2EEB0007076E /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -273,9 +268,8 @@
 			};
 			name = Debug;
 		};
-		57F49E1B2D9E24A4006B32C3 /* Release */ = {
+		CE5BC1CC2D9E592B0007076E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE5BC0F82D9E2EEB0007076E /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -333,20 +327,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		57F49DFF2D9E24A3006B32C3 /* Build configuration list for PBXProject "FlimRoad" */ = {
+		CE5BC1B02D9E592A0007076E /* Build configuration list for PBXProject "FilmRoad" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				57F49E1A2D9E24A4006B32C3 /* Debug */,
-				57F49E1B2D9E24A4006B32C3 /* Release */,
+				CE5BC1CB2D9E592B0007076E /* Debug */,
+				CE5BC1CC2D9E592B0007076E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		57F49E172D9E24A4006B32C3 /* Build configuration list for PBXNativeTarget "FlimRoad" */ = {
+		CE5BC1C82D9E592B0007076E /* Build configuration list for PBXNativeTarget "FilmRoad" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				57F49E182D9E24A4006B32C3 /* Debug */,
-				57F49E192D9E24A4006B32C3 /* Release */,
+				CE5BC1C92D9E592B0007076E /* Debug */,
+				CE5BC1CA2D9E592B0007076E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -354,15 +348,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		57F49E2C2D9E2509006B32C3 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		CE5BC1EC2D9E59AC0007076E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 8.3.1;
 			};
 		};
-		57F49E2F2D9E2514006B32C3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		CE5BC1EF2D9E59BF0007076E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -373,17 +367,17 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		57F49E2D2D9E2509006B32C3 /* Kingfisher */ = {
+		CE5BC1ED2D9E59AC0007076E /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 57F49E2C2D9E2509006B32C3 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = CE5BC1EC2D9E59AC0007076E /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
-		57F49E302D9E2514006B32C3 /* Alamofire */ = {
+		CE5BC1F02D9E59BF0007076E /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 57F49E2F2D9E2514006B32C3 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = CE5BC1EF2D9E59BF0007076E /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 57F49DFC2D9E24A3006B32C3 /* Project object */;
+	rootObject = CE5BC1AD2D9E592A0007076E /* Project object */;
 }
