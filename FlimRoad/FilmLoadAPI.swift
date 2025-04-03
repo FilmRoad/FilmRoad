@@ -7,14 +7,15 @@
 
 import UIKit
 
-class FilmRoadService: NSObject, XMLParserDelegate {
+class FilmLoadAPI: NSObject, XMLParserDelegate {
     private var items: [FilmRoadItem] = []
     private var currentItem: [String: String] = [:]
     private var currentElement: String = ""
     private var currentValue: String = ""
     private var completion: (([FilmRoadItem]) -> Void)?
     
-    func fetchFilmRoadData() {
+    func fetchFilmRoadData(completion: @escaping ([FilmRoadItem]) -> Void) {
+        self.completion = completion
         let endPoint = "http://api.kcisa.kr/openapi/API_TOU_048/request?serviceKey=\(Key.filmRoadKey)"
         guard let url = URL(string: endPoint) else { return }
         let request = URLRequest(url: url)
@@ -25,7 +26,7 @@ class FilmRoadService: NSObject, XMLParserDelegate {
             parser.delegate = self
             if parser.parse() {
                 DispatchQueue.main.async {
-                    print(self.items.first ?? "No Data")
+                    self.completion?(self.items.filter { $0.format == "drama" || $0.format == "movie" })
                 }
             }
         }.resume()
@@ -59,7 +60,9 @@ class FilmRoadService: NSObject, XMLParserDelegate {
     }
     
     func parserDidEndDocument(_ parser: XMLParser) {
-        completion?(items)
+        DispatchQueue.main.async {
+            self.completion?(self.items.filter { $0.format == "drama" || $0.format == "movie" })
+        }
     }
     
     // MARK: - Helper Method
