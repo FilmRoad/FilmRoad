@@ -7,6 +7,9 @@
 .AppleDouble
 .LSOverride
 GoogleService-info.plist
+vi .gitignore
+*.xcconfig
+
 
 # Icon must end with two \r
 Icon
