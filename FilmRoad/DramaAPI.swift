@@ -33,12 +33,4 @@ func dramaWithImage(_ q: String){
         print(tvPoster.name)
         print(tvPoster.posterPath)
     }
-
 }
-
-
-//
-//if let poster = media?.first{
-//    print(poster.title)
-//    print(poster.posterPath)
-//}

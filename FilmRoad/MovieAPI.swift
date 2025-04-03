@@ -33,10 +33,3 @@ func movieWithImage(_ q: String){
     }
 
 }
-
-
-//
-//if let poster = media?.first{
-//    print(poster.title)
-//    print(poster.posterPath)
-//}
