@@ -1,0 +1,12 @@
+//
+//  Config.xcconfig
+//  FilmLoad
+//
+//  Created by Song Kim on 4/3/25.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+mediaKey = ff0e6558ecff7e80ebb65a6e4e00abfe
+filmRoadKey = 31dcf41b-7126-4666-9cdc-83ad16748cd0
