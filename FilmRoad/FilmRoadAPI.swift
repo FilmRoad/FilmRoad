@@ -7,6 +7,12 @@
 
 import UIKit
 
+struct ImageData {
+    var title: String
+    var url: String
+    var format: String
+}
+
 class FilmLoadAPI: NSObject, XMLParserDelegate {
     private var items: [FilmRoadItem] = []
     private var currentItem: [String: String] = [:]
@@ -17,16 +23,17 @@ class FilmLoadAPI: NSObject, XMLParserDelegate {
     func fetchFilmRoadData(completion: @escaping ([FilmRoadItem]) -> Void) {
         self.completion = completion
         let endPoint = "http://api.kcisa.kr/openapi/API_TOU_048/request?serviceKey=\(Key.filmRoadKey)"
+        
         guard let url = URL(string: endPoint) else { return }
         let request = URLRequest(url: url)
-        
+
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data else { return }
             let parser = XMLParser(data: data)
             parser.delegate = self
             if parser.parse() {
                 DispatchQueue.main.async {
-                    self.completion?(self.items.filter { $0.format == "drama" || $0.format == "movie" })
+                    let filteredItems = self.items.filter { $0.format == "drama" || $0.format == "movie" }
                 }
             }
         }.resume()

@@ -37,3 +37,17 @@ struct FilmRoadItem: Codable {
     let subDescription: String
     let description: String
 }
+
+struct FilmRoadItemWithURL: Codable {
+    let placeName: String
+    let format: String
+    let mediaTitle: String
+    let address: String
+    let tel: String
+    let coordinates: String
+    let issuedDate: String
+    let type: String?
+    let subDescription: String
+    let description: String
+    let url: String
+}

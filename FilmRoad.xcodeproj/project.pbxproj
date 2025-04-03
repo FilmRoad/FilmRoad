@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57B666132D9E778C00B6D3E4 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 57B666122D9E778C00B6D3E4 /* Config.xcconfig */; };
 		CE5BC1EE2D9E59AC0007076E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CE5BC1ED2D9E59AC0007076E /* Kingfisher */; };
 		CE5BC1F12D9E59BF0007076E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE5BC1F02D9E59BF0007076E /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		57B666122D9E778C00B6D3E4 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		CE5BC1B52D9E592A0007076E /* FilmRoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilmRoad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -54,6 +56,7 @@
 			children = (
 				CE5BC1B72D9E592A0007076E /* FilmRoad */,
 				CE5BC1B62D9E592A0007076E /* Products */,
+				57B666122D9E778C00B6D3E4 /* Config.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57B666132D9E778C00B6D3E4 /* Config.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +211,7 @@
 		};
 		CE5BC1CB2D9E592B0007076E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57B666122D9E778C00B6D3E4 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
