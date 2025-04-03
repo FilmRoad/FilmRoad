@@ -26,5 +26,9 @@
 			</array>
 		</dict>
 	</dict>
+	<key>filmRoadKey</key>
+	<string>${filmRoadKey}</string>
+	<key>mediaKey</key>
+	<string>${mediaKey}</string>
 </dict>
 </plist>
