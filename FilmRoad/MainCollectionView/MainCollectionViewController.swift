@@ -30,6 +30,7 @@ class MainCollectionViewController: UICollectionViewController {
         setupUI()
         setupNavigationBar()
         setupActivityIndicator()
+        setupNavigationBarAppearance()
         fetchData()
         navigationController?.navigationBar.backgroundColor = .white
         navigationController?.navigationBar.isTranslucent = false
@@ -50,14 +51,26 @@ class MainCollectionViewController: UICollectionViewController {
         ])
     }
     
+    private func setupNavigationBarAppearance() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.shadowColor = .clear
+        appearance.backgroundColor = .white
+        appearance.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -10)
+        
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+    }
+    
     private func setupNavigationBar() {
         let logoImage = UIImage(named: "logo")
         let logoImageView = UIImageView(image: logoImage)
         logoImageView.contentMode = .scaleAspectFit
 
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        logoImageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        logoImageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        logoImageView.widthAnchor.constraint(equalToConstant: 180).isActive = true
+        logoImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
 
         let logoItem = UIBarButtonItem(customView: logoImageView)
         navigationItem.leftBarButtonItem = logoItem
