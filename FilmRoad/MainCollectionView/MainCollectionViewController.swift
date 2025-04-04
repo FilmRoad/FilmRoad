@@ -13,6 +13,8 @@ class MainCollectionViewController: UICollectionViewController {
     private var selectedFormat: String = "movie"
     private let activityIndicator = UIActivityIndicatorView(style: .large)
     var page = 1
+    
+    let backButton = UIBarButtonItem()
 
     private var currentPageItems: [FilmRoadItemWithURL] {
         let filtered = FilmDataStore.shared.itemsURL.filter { $0.format == selectedFormat }
@@ -29,6 +31,10 @@ class MainCollectionViewController: UICollectionViewController {
         fetchData()
         navigationController?.navigationBar.backgroundColor = .white
         navigationController?.navigationBar.isTranslucent = false
+
+        backButton.title = ""
+        backButton.tintColor = .black
+        navigationItem.backBarButtonItem = backButton
     }
 
     

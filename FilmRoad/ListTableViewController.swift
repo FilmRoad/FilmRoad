@@ -10,6 +10,8 @@ import UIKit
 class ListTableViewController: UITableViewController {
     var titleName: String?
     var data: [FilmRoadItem] = []
+    
+    let backButton = UIBarButtonItem()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,10 @@ class ListTableViewController: UITableViewController {
         }
         print("🎯 필터링된 데이터 수: \(data.count)")
         tableView.reloadData()
+        
+        backButton.title = ""
+        backButton.tintColor = .black
+        navigationItem.backBarButtonItem = backButton
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
