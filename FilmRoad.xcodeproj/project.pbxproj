@@ -14,7 +14,7 @@
 
 /* Begin PBXFileReference section */
 		57B666122D9E778C00B6D3E4 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
-		CE5BC1B52D9E592A0007076E /* FilmRoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilmRoad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE5BC1B52D9E592A0007076E /* FilmRoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = FilmRoad.app; path = "/Users/songkim/Desktop/FilmRoad/build/Debug-iphoneos/FilmRoad.app"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -55,17 +55,8 @@
 			isa = PBXGroup;
 			children = (
 				CE5BC1B72D9E592A0007076E /* FilmRoad */,
-				CE5BC1B62D9E592A0007076E /* Products */,
 				57B666122D9E778C00B6D3E4 /* Config.xcconfig */,
 			);
-			sourceTree = "<group>";
-		};
-		CE5BC1B62D9E592A0007076E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CE5BC1B52D9E592A0007076E /* FilmRoad.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +115,7 @@
 				CE5BC1EF2D9E59BF0007076E /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = CE5BC1B62D9E592A0007076E /* Products */;
+			productRefGroup = CE5BC1AC2D9E592A0007076E;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
