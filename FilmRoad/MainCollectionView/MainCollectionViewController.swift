@@ -10,13 +10,12 @@ import Kingfisher
 
 class MainCollectionViewController: UICollectionViewController {
     private var saveData = SaveData()
-    private var itemsURL: [FilmRoadItemWithURL] = []
     private var selectedFormat: String = "movie"
     private let activityIndicator = UIActivityIndicatorView(style: .large)
     var page = 1
-    
+
     private var currentPageItems: [FilmRoadItemWithURL] {
-        let filtered = itemsURL.filter { $0.format == selectedFormat }
+        let filtered = FilmDataStore.shared.itemsURL.filter { $0.format == selectedFormat }
         let startIndex = (page - 1) * 20
         let endIndex = min(startIndex + 20, filtered.count)
         guard startIndex < filtered.count else { return [] }
@@ -42,7 +41,6 @@ class MainCollectionViewController: UICollectionViewController {
         
         saveData.saveData {
             DispatchQueue.main.async {
-                self.itemsURL = self.saveData.itemsURL
                 self.collectionView.reloadData()
                 self.activityIndicator.stopAnimating()
             }
@@ -58,7 +56,8 @@ class MainCollectionViewController: UICollectionViewController {
     }
     
     @objc private func nextPage() {
-        if page < Int(ceil(Double(itemsURL.count) / 20.0)) {
+        let filteredCount = FilmDataStore.shared.itemsURL.filter { $0.format == selectedFormat }.count
+        if page < Int(ceil(Double(filteredCount) / 20.0)) {
             page += 1
             collectionView.reloadData()
             collectionView.reloadSections(IndexSet(integer: 0))
@@ -71,7 +70,6 @@ class MainCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell1", for: indexPath)
-        cell.backgroundColor = .lightGray
         let imageView = cell.viewWithTag(1) as? UIImageView
         
         let imageData = currentPageItems[indexPath.row]
@@ -117,7 +115,7 @@ extension MainCollectionViewController {
             return header
         } else if kind == UICollectionView.elementKindSectionFooter {
             let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "FooterView", for: indexPath) as! FooterView
-            let maxPage = Int(ceil(Double(itemsURL.filter { $0.format == selectedFormat }.count) / 20.0))
+            let maxPage = Int(ceil(Double(FilmDataStore.shared.itemsURL.filter { $0.format == selectedFormat }.count) / 20.0))
             footer.configure(
                 previousAction: #selector(previousPage),
                 nextAction: #selector(nextPage),
