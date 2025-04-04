@@ -25,7 +25,24 @@ class MainCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupNavigationBar()
         fetchData()
+        navigationController?.navigationBar.backgroundColor = .white
+        navigationController?.navigationBar.isTranslucent = false
+    }
+
+    
+    private func setupNavigationBar() {
+        let logoImage = UIImage(named: "logo")
+        let logoImageView = UIImageView(image: logoImage)
+        logoImageView.contentMode = .scaleAspectFit
+
+        logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        logoImageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        logoImageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+
+        let logoItem = UIBarButtonItem(customView: logoImageView)
+        navigationItem.leftBarButtonItem = logoItem
     }
     
     private func setupUI() {

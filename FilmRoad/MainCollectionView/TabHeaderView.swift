@@ -37,7 +37,7 @@ class TabHeaderView: UICollectionReusableView {
         
         [movieButton, dramaButton].forEach {
             $0.setTitleColor(.gray, for: .normal)
-            $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+            $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
             $0.backgroundColor = .clear
         }
 
