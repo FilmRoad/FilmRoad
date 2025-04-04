@@ -155,3 +155,13 @@ extension MainCollectionViewController {
         return CGSize(width: collectionView.frame.width, height: 60)
     }
 }
+
+extension MainCollectionViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPath = collectionView.indexPathsForSelectedItems?.first,
+           let destinationVC = segue.destination as? ListTableViewController {
+            let selectedItem = currentPageItems[indexPath.row]
+            destinationVC.titleName = selectedItem.mediaTitle
+        }
+    }
+}
