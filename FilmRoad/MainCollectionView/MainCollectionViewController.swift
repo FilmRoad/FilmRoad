@@ -11,14 +11,16 @@ import Kingfisher
 class MainCollectionViewController: UICollectionViewController {
     private var saveData = SaveData()
     private var itemsURL: [FilmRoadItemWithURL] = []
+    private var selectedFormat: String = "movie"
     private let activityIndicator = UIActivityIndicatorView(style: .large)
     var page = 1
     
     private var currentPageItems: [FilmRoadItemWithURL] {
+        let filtered = itemsURL.filter { $0.format == selectedFormat }
         let startIndex = (page - 1) * 20
-        let endIndex = min(startIndex + 20, itemsURL.count)
-        guard startIndex < itemsURL.count else { return [] }
-        return Array(itemsURL[startIndex..<endIndex])
+        let endIndex = min(startIndex + 20, filtered.count)
+        guard startIndex < filtered.count else { return [] }
+        return Array(filtered[startIndex..<endIndex])
     }
     
     override func viewDidLoad() {
@@ -27,14 +29,11 @@ class MainCollectionViewController: UICollectionViewController {
         fetchData()
     }
     
-    private let previousButton = UIButton(type: .system)
-    private let nextButton = UIButton(type: .system)
-
     private func setupUI() {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(FooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "FooterView")
-
+        collectionView.register(TabHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TabHeaderView.identifier)
     }
     
     private func fetchData() {
@@ -43,14 +42,13 @@ class MainCollectionViewController: UICollectionViewController {
         
         saveData.saveData {
             DispatchQueue.main.async {
-                self.itemsURL = self.saveData.itemsURL.filter { $0.format == "movie" } // 드라마만 필터링
-                print("✅ 컬렉션 뷰 데이터 갱신 완료: \(self.itemsURL.count)개")
+                self.itemsURL = self.saveData.itemsURL
                 self.collectionView.reloadData()
                 self.activityIndicator.stopAnimating()
             }
         }
     }
-
+    
     @objc private func previousPage() {
         if page > 1 {
             page -= 1
@@ -58,7 +56,7 @@ class MainCollectionViewController: UICollectionViewController {
             collectionView.reloadSections(IndexSet(integer: 0))
         }
     }
-
+    
     @objc private func nextPage() {
         if page < Int(ceil(Double(itemsURL.count) / 20.0)) {
             page += 1
@@ -66,49 +64,26 @@ class MainCollectionViewController: UICollectionViewController {
             collectionView.reloadSections(IndexSet(integer: 0))
         }
     }
-
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return currentPageItems.count
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell1", for: indexPath)
         cell.backgroundColor = .lightGray
         let imageView = cell.viewWithTag(1) as? UIImageView
-
+        
         let imageData = currentPageItems[indexPath.row]
-
+        
         if let url = URL(string: imageData.url) {
-            print("🔗 이미지 로드: \(imageData.mediaTitle) -> \(url)")
             imageView?.kf.setImage(with: url)
         }
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-                        referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 50)
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String,
-                                 at indexPath: IndexPath) -> UICollectionReusableView {
-        if kind == UICollectionView.elementKindSectionFooter {
-            let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "FooterView", for: indexPath) as! FooterView
-            let maxPage = Int(ceil(Double(itemsURL.count) / 20.0))
-            footer.configure(
-                previousAction: #selector(previousPage),
-                nextAction: #selector(nextPage),
-                target: self,
-                currentPage: page,
-                maxPage: maxPage
-            )
-            return footer
-        }
-        return UICollectionReusableView()
-    }
 }
 
+// 콜렉션뷰 사이즈
 extension MainCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemsPerRow: CGFloat = 2
@@ -125,5 +100,43 @@ extension MainCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 20
+    }
+}
+
+// 헤더 푸터
+extension MainCollectionViewController {
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String,
+                                 at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader {
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TabHeaderView.identifier, for: indexPath) as! TabHeaderView
+            header.didSelectTab = { [weak self] selected in
+                self?.selectedFormat = selected
+                self?.page = 1
+                self?.collectionView.reloadData()
+            }
+            return header
+        } else if kind == UICollectionView.elementKindSectionFooter {
+            let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "FooterView", for: indexPath) as! FooterView
+            let maxPage = Int(ceil(Double(itemsURL.filter { $0.format == selectedFormat }.count) / 20.0))
+            footer.configure(
+                previousAction: #selector(previousPage),
+                nextAction: #selector(nextPage),
+                target: self,
+                currentPage: page,
+                maxPage: maxPage
+            )
+            return footer
+        }
+        return UICollectionReusableView()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 50)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 60)
     }
 }

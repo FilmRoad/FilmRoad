@@ -7,12 +7,6 @@
 
 import UIKit
 
-struct ImageData {
-    var title: String
-    var url: String
-    var format: String
-}
-
 class FilmLoadAPI: NSObject, XMLParserDelegate {
     private var items: [FilmRoadItem] = []
     private var currentItem: [String: String] = [:]
