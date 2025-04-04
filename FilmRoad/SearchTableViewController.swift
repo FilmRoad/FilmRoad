@@ -18,9 +18,7 @@ class SearchTableViewController: UITableViewController {
     
     
     func searchWithKeyword(_ keyword: String?){
-        print("서치함수")
         guard let keyword else {return}
-        print("keyword출력 : \(keyword)")
         titleArr = items.filter{$0.mediaTitle.contains(keyword)}
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -57,9 +55,5 @@ extension SearchTableViewController: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchWithKeyword(searchBar.text)
         searchBar.resignFirstResponder()
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        print("취소")
     }
 }
