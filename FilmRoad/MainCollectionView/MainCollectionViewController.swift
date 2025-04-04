@@ -12,6 +12,7 @@ class MainCollectionViewController: UICollectionViewController {
     private var saveData = SaveData()
     private var selectedFormat: String = "movie"
     private let activityIndicator = UIActivityIndicatorView(style: .large)
+    private var isLoading: Bool = true
     var page = 1
     
     let backButton = UIBarButtonItem()
@@ -28,6 +29,7 @@ class MainCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         setupUI()
         setupNavigationBar()
+        setupActivityIndicator()
         fetchData()
         navigationController?.navigationBar.backgroundColor = .white
         navigationController?.navigationBar.isTranslucent = false
@@ -36,7 +38,17 @@ class MainCollectionViewController: UICollectionViewController {
         backButton.tintColor = .black
         navigationItem.backBarButtonItem = backButton
     }
+    
+    private func setupActivityIndicator() {
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.hidesWhenStopped = true
+        view.addSubview(activityIndicator)
 
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+    }
     
     private func setupNavigationBar() {
         let logoImage = UIImage(named: "logo")
@@ -59,13 +71,17 @@ class MainCollectionViewController: UICollectionViewController {
     }
     
     private func fetchData() {
+        isLoading = true
         activityIndicator.startAnimating()
+        view.isUserInteractionEnabled = false
         print("📡 데이터 로드 시작...")
         
         saveData.saveData {
             DispatchQueue.main.async {
-                self.collectionView.reloadData()
+                self.isLoading = false
+                self.collectionView.reloadData() // footer 다시 보여주기 위해 reload
                 self.activityIndicator.stopAnimating()
+                self.view.isUserInteractionEnabled = true
             }
         }
     }
@@ -153,7 +169,7 @@ extension MainCollectionViewController {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 50)
+        return isLoading ? .zero : CGSize(width: collectionView.frame.width, height: 50)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,

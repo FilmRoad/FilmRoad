@@ -13,7 +13,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5792D48F2D9FA795007A4D48 /* FilmRoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = FilmRoad.app; path = "/Users/songkim/Desktop/FilmRoad/build/Debug-iphoneos/FilmRoad.app"; sourceTree = "<absolute>"; };
+		5792D5352D9FAD33007A4D48 /* FilmRoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilmRoad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B666122D9E778C00B6D3E4 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +56,7 @@
 			children = (
 				CE5BC1B72D9E592A0007076E /* FilmRoad */,
 				57B666122D9E778C00B6D3E4 /* Config.xcconfig */,
+				5792D5352D9FAD33007A4D48 /* FilmRoad.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,7 +84,7 @@
 				CE5BC1F02D9E59BF0007076E /* Alamofire */,
 			);
 			productName = FilmRoad;
-			productReference = 5792D48F2D9FA795007A4D48 /* FilmRoad.app */;
+			productReference = 5792D5352D9FAD33007A4D48 /* FilmRoad.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
