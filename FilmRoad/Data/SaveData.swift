@@ -36,11 +36,12 @@ class SaveData {
             }
             
             print("✅ API 응답 완료, 데이터 수: \(items.count)")
+            FilmDataStore.shared.items = items
+            print(FilmDataStore.shared.items.count)
+            
             var uniqueTitles = Set<String>()
             let filteredItems = items.filter { uniqueTitles.insert($0.mediaTitle).inserted }
-            FilmDataStore.shared.items = filteredItems
-            
-            print("🎬 중복 제거 후 데이터 수: \(filteredItems.count)")
+            print("🎬 중복 제거 후 이미지 로딩할 데이터 수: \(filteredItems.count)")
             
             let dispatchGroup = DispatchGroup()
             
