@@ -4,10 +4,9 @@
 //
 //  Created by hello on 4/3/25.
 //
-import Kingfisher
+
 import Alamofire
 import UIKit
-
 
 var movie: [Movie]?
 
@@ -26,10 +25,5 @@ func movieWithImage(_ q: String, completion: @escaping ([Movie]?) -> Void) {
             print(error.localizedDescription)
             completion(nil)
         }
-        
-        guard let movie,
-              let tvPoster = movie.first
-        else {return}
     }
-
 }

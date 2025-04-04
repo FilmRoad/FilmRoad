@@ -33,7 +33,7 @@ class FilmLoadAPI: NSObject, XMLParserDelegate {
             parser.delegate = self
             if parser.parse() {
                 DispatchQueue.main.async {
-                    let filteredItems = self.items.filter { $0.format == "drama" || $0.format == "movie" }
+                    _ = self.items.filter { $0.format == "drama" || $0.format == "movie" }
                 }
             }
         }.resume()

@@ -5,7 +5,7 @@
 //
 //  Created by hello on 4/3/25.
 //
-import Kingfisher
+
 import Alamofire
 import UIKit
 
@@ -27,9 +27,5 @@ func dramaWithImage(_ q: String, completion: @escaping ([Drama]?) -> Void) {
             print(error.localizedDescription)
             completion(nil)
         }
-        
-        guard let drama,
-              let tvPoster = drama.first
-        else {return}
     }
 }
