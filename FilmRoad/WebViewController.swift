@@ -15,8 +15,7 @@ class WebViewController: UIViewController {
         super.viewDidLoad()
 
         navigationController?.navigationBar.tintColor = .black
-        navigationItem.title = ""
-        
+
         guard let url else {return}
         let request = URLRequest(url: url)
         webView.load(request)

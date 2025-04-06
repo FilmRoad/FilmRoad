@@ -51,7 +51,7 @@ class DetailViewController: UIViewController {
         
         mapView.setRegion(region, animated: true)
         mapView.preferredConfiguration = MKStandardMapConfiguration()
-        let pin = CustomAnnotation(coordinate: location, title: place.placeName, subtitle: place.mediaTitle, strURL: naverURL.appending(place.placeName).appending(" \(place.mediaTitle)"))
+        let pin = CustomAnnotation(coordinate: location, title: place.placeName, subtitle: place.mediaTitle, strURL: naverURL.appending(place.placeName))
         mapView.addAnnotation(pin)
         mapView.delegate = self
         navigationItem.title = place.mediaTitle
