@@ -26,7 +26,7 @@ class ListTableViewController: UITableViewController {
         backButton.title = ""
         backButton.tintColor = .black
         navigationItem.backBarButtonItem = backButton
-        
+        navigationItem.title = data.first?.mediaTitle //맞나
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,7 +52,6 @@ class ListTableViewController: UITableViewController {
               let targetVC = segue.destination as? DetailViewController
         else {return}
         let place = data[indexPath.row]
-        print("프리페어 넘겨주는 값 출력: \(place)")
         targetVC.place = place
     }
 }

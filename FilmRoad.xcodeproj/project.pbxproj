@@ -145,6 +145,8 @@
 /* Begin XCBuildConfiguration section */
 		CE5BC1C92D9E592B0007076E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = CE5BC1B72D9E592A0007076E /* FilmRoad */;
+			baseConfigurationReferenceRelativePath = Config.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

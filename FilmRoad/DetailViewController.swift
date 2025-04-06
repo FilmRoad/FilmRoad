@@ -11,6 +11,7 @@ import MapKit
 class DetailViewController: UIViewController {
     var place: FilmRoadItem?
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var lblInfo: UILabel!
     @IBOutlet weak var lblAddress: UILabel!
     @IBOutlet weak var lblTime: UILabel!
     @IBOutlet weak var lblPhone: UILabel!
@@ -32,11 +33,13 @@ class DetailViewController: UIViewController {
         lblAddress.text = place.address
         lblTime.text = place.subDescription
         lblPhone.text = place.tel
+        lblInfo.text = "update info : ".appending(place.issuedDate)
         
-        location = place.coordinates.split(separator: " ").map { String($0) } // 공백으로 분리하여 새로운 배열로 저장
+        location = place.coordinates.split(separator: " ").map { String($0) }
 
         latitudeStr = String(location[0].dropFirst().dropLast())
         longitudeStr = String(location[1].dropFirst())
+        
         guard let latitude = Double(latitudeStr) else {return}
         guard let longitude = Double(longitudeStr) else {return}
         
@@ -48,10 +51,12 @@ class DetailViewController: UIViewController {
         
         mapView.setRegion(region, animated: true)
         mapView.preferredConfiguration = MKStandardMapConfiguration()
-        
-        let pin = CustomAnnotation(coordinate: location, title: place.placeName, subtitle: place.mediaTitle, strURL: naverURL.appending(place.placeName)) //alt.option 누르고 엔터치면 다 만들어줌
+        print(naverURL.appending(place.placeName))
+        let pin = CustomAnnotation(coordinate: location, title: place.placeName, subtitle: place.mediaTitle, strURL: naverURL.appending(place.placeName))
         mapView.addAnnotation(pin)
         mapView.delegate = self
+        navigationItem.title = place.mediaTitle
+
     }
     
     
@@ -82,40 +87,36 @@ class CustomAnnotation: NSObject, MKAnnotation{
         self.title = title
         self.subtitle = subtitle
         self.strURL = strURL
-    } // 꼭만들어주셔야함
+    }
 }
 
 
 
 extension DetailViewController: MKMapViewDelegate{
-    // annotation 화면 보여주는 함수. mkannotationview만들어야함
-    func mapView(_ mapView: MKMapView, viewFor annotation: any MKAnnotation) -> MKAnnotationView? { // 이 annotation에 뭐가 들어오는 것?
+    func mapView(_ mapView: MKMapView, viewFor annotation: any MKAnnotation) -> MKAnnotationView? {
         guard let annotation = annotation as? CustomAnnotation else {return nil}
         
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "pin")
         if annotationView == nil {
             annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "pin")
-            let btn = UIButton(type: .detailDisclosure)//  버튼 생성
+            let btn = UIButton(type: .detailDisclosure)
             annotationView?.rightCalloutAccessoryView = btn
-            annotationView?.canShowCallout = true //?
+            annotationView?.canShowCallout = true
         }
         annotationView?.annotation = annotation
         
         return annotationView
     }
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) { //callout했을때 실행됨 . contrl버튼 넘어옴
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         guard let annotation = view.annotation as? CustomAnnotation else{return}
         
         print(annotation.title ?? "")
         print(annotation.strURL)
         
         
-//        guard let targetVC = storyboard?.instantiateViewController(identifier: "web") as? WebViewController else {return} // storyboard는 uivc에 정의되어 있는 프로퍼티 근데 웹뷰컨트롤을 원함
-//        
-//        targetVC.url = URL(string: annotation.strURL)
-//        self.navigationController?.pushViewController(targetVC, animated: true)
+        guard let targetVC = storyboard?.instantiateViewController(identifier: "web") as? WebViewController else {return}
         
-        
-        
+        targetVC.url = URL(string: annotation.strURL)
+        self.navigationController?.pushViewController(targetVC, animated: true)
     }
 }
