@@ -9,6 +9,8 @@ class SearchTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
+        
+        searchBar.placeholder = "제목을 입력해주세요"
     }
     
     // 자동완성 기능을 위한 필터링 함수
