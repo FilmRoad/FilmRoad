@@ -56,7 +56,6 @@ class MainCollectionViewController: UICollectionViewController {
         appearance.configureWithOpaqueBackground()
         appearance.shadowColor = .clear
         appearance.backgroundColor = .white
-        appearance.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -10)
         
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
