@@ -32,7 +32,7 @@
 |:--:|:--:|
 |<img src="https://avatars.githubusercontent.com/u/19872750?v=4" width="250" />|<img src="http://avatars.githubusercontent.com/u/60345855?v=4" width="250" />|
 |[@ksiomng](https://github.com/ksiomng)|[@juj990717](https://github.com/juj990717)|
-|- 관광지 API 호출 <br> - 메인 뷰 <br> - 리스트 뷰 |- 영화포스터 API 호출 <br> - 검색 뷰 <br> - 디테일, 웹 뷰|
+|- 관광지 API 호출 <br> - 메인, 리스트 뷰 |- 영화포스터 API 호출 <br> - 검색, 디테일, 웹 뷰|
 
 <br>
 
@@ -54,3 +54,7 @@
   </tr>
 </table>
 <br/>
+
+## 📌 사용API
+- 미디어에 따른 관광지 API: https://www.culture.go.kr/data/openapi/openapiView.do?id=583&gubun=A
+- 영화, 드라마 포스터 API: https://developer.themoviedb.org/reference/intro/getting-started
