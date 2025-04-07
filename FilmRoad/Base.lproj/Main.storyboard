@@ -92,14 +92,14 @@
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell3" id="wDb-Ry-qwS">
-                                <rect key="frame" x="0.0" y="94" width="393" height="42"/>
+                                <rect key="frame" x="0.0" y="94" width="393" height="42.333332061767578"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wDb-Ry-qwS" id="yzt-ce-cjn">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="42"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="42.333332061767578"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQQ-Dt-ijz">
-                                            <rect key="frame" x="10" y="10" width="373" height="22"/>
+                                            <rect key="frame" x="10" y="9.9999999999999982" width="373" height="22.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -253,7 +253,7 @@
                                     <constraint firstAttribute="height" constant="1" id="sKw-gW-zVn"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="3" contentMode="scaleToFill" text="ex" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VtZ-B1-3PM">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="3" contentMode="scaleToFill" editable="NO" text="ex" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VtZ-B1-3PM">
                                 <rect key="frame" x="10" y="526.66666666666663" width="373" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
