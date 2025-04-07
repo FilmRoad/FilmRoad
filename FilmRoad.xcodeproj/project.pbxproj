@@ -12,7 +12,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CE5374902D9FAAEF006BA4BD /* FilmRoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilmRoad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5792D5352D9FAD33007A4D48 /* FilmRoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilmRoad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		57B666122D9E778C00B6D3E4 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -53,7 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				CE5BC1B72D9E592A0007076E /* FilmRoad */,
-				CE5374902D9FAAEF006BA4BD /* FilmRoad.app */,
+				57B666122D9E778C00B6D3E4 /* Config.xcconfig */,
+				5792D5352D9FAD33007A4D48 /* FilmRoad.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,7 +83,7 @@
 				CE5BC1F02D9E59BF0007076E /* Alamofire */,
 			);
 			productName = FilmRoad;
-			productReference = CE5374902D9FAAEF006BA4BD /* FilmRoad.app */;
+			productReference = 5792D5352D9FAD33007A4D48 /* FilmRoad.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -152,6 +154,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 59FP2PXRXK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FilmRoad/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -164,7 +167,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.kibwa.lyr672.FilmRoad;
+				PRODUCT_BUNDLE_IDENTIFIER = ksiomng.FilmRoad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -179,6 +182,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 59FP2PXRXK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FilmRoad/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -191,7 +195,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.kibwa.lyr672.FilmRoad;
+				PRODUCT_BUNDLE_IDENTIFIER = ksiomng.FilmRoad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
