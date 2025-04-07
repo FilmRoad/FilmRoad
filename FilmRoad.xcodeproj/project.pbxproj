@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		57B666132D9E778C00B6D3E4 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 57B666122D9E778C00B6D3E4 /* Config.xcconfig */; };
 		CE5BC1EE2D9E59AC0007076E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CE5BC1ED2D9E59AC0007076E /* Kingfisher */; };
 		CE5BC1F12D9E59BF0007076E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE5BC1F02D9E59BF0007076E /* Alamofire */; };
 /* End PBXBuildFile section */
@@ -130,7 +129,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57B666132D9E778C00B6D3E4 /* Config.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +147,8 @@
 /* Begin XCBuildConfiguration section */
 		CE5BC1C92D9E592B0007076E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = CE5BC1B72D9E592A0007076E /* FilmRoad */;
+			baseConfigurationReferenceRelativePath = Config.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -205,7 +205,8 @@
 		};
 		CE5BC1CB2D9E592B0007076E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 57B666122D9E778C00B6D3E4 /* Config.xcconfig */;
+			baseConfigurationReferenceAnchor = CE5BC1B72D9E592A0007076E /* FilmRoad */;
+			baseConfigurationReferenceRelativePath = Config.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;

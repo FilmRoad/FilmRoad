@@ -26,6 +26,7 @@ class ListTableViewController: UITableViewController {
         backButton.title = ""
         backButton.tintColor = .black
         navigationItem.backBarButtonItem = backButton
+        navigationItem.title = data.first?.mediaTitle //맞나
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,5 +44,14 @@ class ListTableViewController: UITableViewController {
         addressLB?.text = data[indexPath.row].address
         contentLB?.text = data[indexPath.row].description
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let indexPath = tableView.indexPathForSelectedRow,
+              let targetVC = segue.destination as? DetailViewController
+        else {return}
+        let place = data[indexPath.row]
+        targetVC.place = place
     }
 }
