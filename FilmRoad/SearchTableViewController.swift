@@ -5,12 +5,15 @@ class SearchTableViewController: UITableViewController {
     var titleArr: [FilmRoadItemWithURL] = []
     var filteredTitleArr: [FilmRoadItemWithURL] = []  // 자동완성 결과를 담을 배열
     @IBOutlet weak var searchBar: UISearchBar!
+    let backButton = UIBarButtonItem()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
-        
         searchBar.placeholder = "제목을 입력해주세요"
+        backButton.title = ""
+        backButton.tintColor = .black
+        navigationItem.backBarButtonItem = backButton
     }
     
     // 자동완성 기능을 위한 필터링 함수
