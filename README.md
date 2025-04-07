@@ -9,7 +9,7 @@
 <br><br>
 
 ## 📌 프로젝트 소개
-> 프로젝트 기간: 2025/04/03 ~ 2024/04/08
+> 프로젝트 기간: 2025/04/02 ~ 2025/04/08
 
 <br>
 
@@ -57,3 +57,5 @@
 ## 📌 사용API
 - 미디어에 따른 관광지 API: https://www.culture.go.kr/data/openapi/openapiView.do?id=583&gubun=A
 - 영화, 드라마 포스터 API: https://developer.themoviedb.org/reference/intro/getting-started
+
+
