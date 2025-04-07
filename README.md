@@ -28,11 +28,11 @@
 <br>
 
 ## 📌 팀원
-| 김송[팀장] | 정유진 |
+| 김송 [팀장] | 정유진 |
 |:--:|:--:|
 |<img src="https://avatars.githubusercontent.com/u/19872750?v=4" width="250" />|<img src="http://avatars.githubusercontent.com/u/60345855?v=4" width="250" />|
 |[@ksiomng](https://github.com/ksiomng)|[@juj990717](https://github.com/juj990717)|
-|- 관광지 API 호출 <br> - 메인 뷰 <br> - 리스트 뷰 |- 영화포스터 API 호출 <br> - 검색 뷰 <br> - 디테일 뷰|
+|- 관광지 API 호출 <br> - 메인 뷰 <br> - 리스트 뷰 |- 영화포스터 API 호출 <br> - 검색 뷰 <br> - 디테일, 웹 뷰|
 
 <br>
 
