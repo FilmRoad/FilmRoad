@@ -27,7 +27,7 @@ class FilmLoadAPI: NSObject, XMLParserDelegate {
             parser.delegate = self
             if parser.parse() {
                 DispatchQueue.main.async {
-                    _ = self.items.filter { $0.format == "drama" || $0.format == "movie" }
+                    _ = self.items
                 }
             }
         }.resume()
@@ -62,7 +62,7 @@ class FilmLoadAPI: NSObject, XMLParserDelegate {
     
     func parserDidEndDocument(_ parser: XMLParser) {
         DispatchQueue.main.async {
-            self.completion?(self.items.filter { $0.format == "drama" || $0.format == "movie" })
+            self.completion?(self.items)
         }
     }
     

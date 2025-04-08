@@ -13,7 +13,7 @@
 
 /* Begin PBXFileReference section */
 		5792D5352D9FAD33007A4D48 /* FilmRoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilmRoad.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		57B666122D9E778C00B6D3E4 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		CEE4876C2DA39D0600DADBA5 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -54,7 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				CE5BC1B72D9E592A0007076E /* FilmRoad */,
-				57B666122D9E778C00B6D3E4 /* Config.xcconfig */,
+				CEE4876C2DA39D0600DADBA5 /* Config.xcconfig */,
 				5792D5352D9FAD33007A4D48 /* FilmRoad.app */,
 			);
 			sourceTree = "<group>";
@@ -154,7 +154,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 59FP2PXRXK;
+				DEVELOPMENT_TEAM = PTNJVSPBSR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FilmRoad/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -182,7 +182,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 59FP2PXRXK;
+				DEVELOPMENT_TEAM = PTNJVSPBSR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FilmRoad/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -197,5 +197,8 @@ extension MainCollectionViewController {
             let selectedItem = currentPageItems[indexPath.row]
             destinationVC.titleName = selectedItem.mediaTitle
         }
+        if let artistVC = segue.destination as? ArtistTableViewController {
+                artistVC.entryType = segue.identifier // "show" 또는 "artist"
+            }
     }
 }
